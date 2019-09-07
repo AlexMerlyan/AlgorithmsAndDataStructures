@@ -19,6 +19,7 @@ public class ReverseInteger {
     }
 
     public int reverseInt(int number, int length) {
+
         int pow = (int) Math.pow(10, --length);
         int divider = 10;
         int result = number % divider * pow;
