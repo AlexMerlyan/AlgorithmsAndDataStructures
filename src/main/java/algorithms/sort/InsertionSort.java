@@ -2,7 +2,7 @@ package algorithms.sort;
 
 import java.util.Arrays;
 
-public class InsertSort {
+public class InsertionSort {
 
     public static void main(String[] args) {
         int[] data = new int[] {5, 3, 4, 9, 6, 10, 100, 89, 65, 1};
@@ -11,7 +11,11 @@ public class InsertSort {
     }
 
     private static void sort(int[] data) {
-        for (int i = 1; i < data.length; i++) {
+        sort(data, 0, data.length - 1);
+    }
+
+    static void sort(int[] data, int left, int right) {
+        for (int i = left; i <= right; i++) {
             int temp = data[i];
             int j = i;
             while (j > 0 && data[j-1] > temp) {
@@ -21,5 +25,7 @@ public class InsertSort {
             data[j] = temp;
         }
     }
+
+
 
 }

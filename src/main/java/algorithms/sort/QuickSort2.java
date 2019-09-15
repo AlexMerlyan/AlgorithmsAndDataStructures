@@ -12,7 +12,9 @@ public class QuickSort2 {
 
     private static void sort(int[] data, int left, int right) {
         if (right - left + 1 <= 3) {
-            manualSort(data, left, right);
+            // You can use manual or insertion sort
+            //manualSort(data, left, right);
+            InsertionSort.sort(data, left, right);
         } else {
             int partition = partition(data, left, right);
             sort(data, left, partition - 1);
@@ -30,14 +32,14 @@ public class QuickSort2 {
                 swap(data, left, right);
             }
         } else {
-            if (data[left] > data[right-1]) {
-                swap(data, left, right-1);
+            if (data[left] > data[right - 1]) {
+                swap(data, left, right - 1);
             }
             if (data[left] > data[right]) {
                 swap(data, left, right);
             }
-            if (data[right -1] > data[right]) {
-                swap(data, right -1 , right);
+            if (data[right - 1] > data[right]) {
+                swap(data, right - 1, right);
             }
         }
     }
